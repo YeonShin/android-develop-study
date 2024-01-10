@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogInActivity">
+
+    <ImageView
+        android:id="@+id/logo_1"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/home_app_logo_40px" />
+
+    <RelativeLayout
+        android:id="@+id/login_form_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_1"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/id_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/label_id"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="ID"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/input_id"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/label_id"
+                android:singleLine="true"
+                android:layout_marginStart="10dp"
+                android:hint="ID를 입력해주세요" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwd_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_section">
+
+            <TextView
+                android:id="@+id/label_pwd"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_centerVertical="true"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/input_pwd"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/label_pwd"
+                android:layout_marginStart="10dp"
+                android:hint="Password를 입력해주세요"
+                android:singleLine="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pwd_section"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Login"/>
+            <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:layout_toRightOf="@+id/btn_login"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
