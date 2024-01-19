@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".countperson.CountPerson">
+    <RelativeLayout
+        android:id="@+id/countText_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="150dp"
+        >
+        <TextView
+            android:id="@+id/text_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="32sp"
+            android:text="0"
+            android:layout_marginBottom="50dp"
+            android:textAlignment="center"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countText_layout"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:id="@+id/btn_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:text="Increase"
+            android:layout_marginEnd="10dp"
+            />
+        <Button
+            android:id="@+id/btn_decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_increase"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/gray"
+            android:text="Decrease"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

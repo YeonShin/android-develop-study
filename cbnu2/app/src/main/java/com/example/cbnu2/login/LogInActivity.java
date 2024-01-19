@@ -1,4 +1,4 @@
-package com.example.cbnu2;
+package com.example.cbnu2.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.cbnu2.MainActivity2;
 import com.example.cbnu2.databinding.ActivityLogInBinding;
 
 public class LogInActivity extends AppCompatActivity {
