@@ -6,31 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
     <Button
         android:id="@+id/btn_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
         android:backgroundTint="@color/black"
-        />
+        android:text="로그인" />
+
     <Button
         android:id="@+id/btn_countMan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="사람 수 세기"
-        android:layout_toRightOf="@+id/btn_1"
         android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/btn_1"
         android:backgroundTint="@color/red"
-        />
+        android:text="사람 수 세기" />
 
+    <Button
+        android:id="@+id/btn_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/btn_countMan"
+        android:backgroundTint="@color/blue"
+        android:text="계산기 앱" />
 
 
 </RelativeLayout>
