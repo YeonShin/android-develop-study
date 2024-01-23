@@ -9,5 +9,7 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">36sp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
     </style>
 </resources>

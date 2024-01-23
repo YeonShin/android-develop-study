@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="200+200"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="32sp" />
     </RelativeLayout>
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="400"
+            android:text=""
             android:textColor="@color/green"
             android:textSize="32sp" />
     </RelativeLayout>
@@ -56,14 +56,13 @@
 
     <RelativeLayout
         android:id="@+id/calculator_btn_layout"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/line_layout"
-        android:layout_marginStart="5dp"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true">
         <RelativeLayout
             android:id="@+id/cal_first_line_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_marginTop="10dp">
@@ -94,9 +93,9 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/cal_second_line_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/cal_first_line_layout">
 
             <android.widget.Button
@@ -127,9 +126,9 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/cal_third_line_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/cal_second_line_layout">
 
             <android.widget.Button
@@ -160,9 +159,9 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/cal_fourth_line_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/cal_third_line_layout">
 
             <android.widget.Button
@@ -193,9 +192,9 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/cal_fifth_line_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/cal_fourth_line_layout">
 
             <android.widget.Button
@@ -212,7 +211,7 @@
                 android:textColor="@color/white" />
 
             <android.widget.Button
-                android:id="@+id/btn_point"
+                android:id="@+id/btn_dot"
                 style="@style/CalculatorButton"
                 android:layout_toRightOf="@+id/btn_zero"
                 android:text="."
@@ -222,7 +221,7 @@
                 android:id="@+id/btn_equal"
                 style="@style/CalculatorButton"
                 android:backgroundTint="@color/green"
-                android:layout_toRightOf="@+id/btn_point"
+                android:layout_toRightOf="@+id/btn_dot"
                 android:text="="
                 android:textColor="@color/white"/>
         </RelativeLayout>
