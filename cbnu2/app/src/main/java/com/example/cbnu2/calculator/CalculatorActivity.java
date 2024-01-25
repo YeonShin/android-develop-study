@@ -45,6 +45,7 @@ public class CalculatorActivity extends AppCompatActivity {
         setOperatorClickListener(binding.btnDiv, "/");
         setOperatorClickListener(binding.btnMod, "%");
         setEqualsClickListener(binding.btnEqual);
+        setBackspaceClickListener(binding.btnBackspace);
         setClearClickListener(binding.btnCancle);
 
 
@@ -80,6 +81,26 @@ public class CalculatorActivity extends AppCompatActivity {
             }
         });
     }
+    private void setBackspaceClickListener(Button button) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentInput.toString().isEmpty()) {
+                    return ;
+                } else if (currentInput.toString().length() == 1) {
+                    currentInput.deleteCharAt(currentInput.length() -1);
+                    binding.numInput.setText("0");
+                    binding.numResult.setText("0");
+                    return ;
+                }
+                // 현재 입력된 문자열에서 마지막 한 글자 제거
+                currentInput.deleteCharAt(currentInput.length() - 1);
+                // 수정된 문자열을 numInput에 설정
+                binding.numInput.setText(currentInput.toString());
+                binding.numResult.setText(currentInput.toString());
+            }
+        });
+    }
     private void setClearClickListener(Button button){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,9 +128,14 @@ public class CalculatorActivity extends AppCompatActivity {
             makeToast("숫자를 먼저 입력하세요");
             return;
         }
-        appendToCumulativeInput(currentInput.toString());
-        clearCurrentInput();
-        currentOperator = operator;
+        if(currentOperator == "") {
+            appendToCumulativeInput(currentInput.toString());
+            clearCurrentInput();
+            currentOperator = operator;
+        } else {
+            handleEqualsClick();
+        }
+
     }
 
     private void handleEqualsClick() {
@@ -117,17 +143,32 @@ public class CalculatorActivity extends AppCompatActivity {
             makeToast("숫자를 먼저 입력하세요");
             return;
         }
+        if(currentOperator == "") {
+            return ;
+        }
         double result = performCalculation(
                 Double.parseDouble(cumulativeInput.toString()),
                 Double.parseDouble(currentInput.toString()),
                 currentOperator
         );
-        binding.numResult.setText(String.valueOf(result));
-        binding.numInput.setText(String.valueOf(result));
-        clearCurrentInput();
-        appendToCurrentInput(String.valueOf(result));
-        clearCumulativeInput();
-        currentOperator = "";
+        if(result % 1.0 == 0) {
+            int intResult = (int)result;
+            binding.numResult.setText(String.valueOf(intResult));
+            binding.numInput.setText(String.valueOf(intResult));
+            clearCurrentInput();
+            appendToCurrentInput(String.valueOf(intResult));
+            clearCumulativeInput();
+            currentOperator = "";
+        } else {
+            binding.numResult.setText(String.valueOf(result));
+            binding.numInput.setText(String.valueOf(result));
+            clearCurrentInput();
+            appendToCurrentInput(String.valueOf(result));
+            clearCumulativeInput();
+            currentOperator = "";
+        }
+
+
     }
 
     private double performCalculation(double operand1, double operand2, String operator) {
@@ -144,7 +185,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     return operand1 / operand2;
                 } else {
                     makeToast("0으로 나눌 수 없습니다");
-                    return Double.NaN;
+                    return operand1;
                 }
             case "%":
                 // Handle division by zero
@@ -152,7 +193,7 @@ public class CalculatorActivity extends AppCompatActivity {
                     return operand1 % operand2;
                 } else {
                     makeToast("0으로 나머지 연산 할 수 없습니다");
-                    return Double.NaN; //
+                    return operand1; //
                 }
             default:
                 makeToast("잘못된 연산자입니다");
@@ -164,6 +205,7 @@ public class CalculatorActivity extends AppCompatActivity {
     private void appendToCurrentInput(String value) {
         currentInput.append(value);
         binding.numInput.setText(currentInput.toString());
+        binding.numResult.setText(currentInput.toString());
     }
 
     private void appendToCumulativeInput(String value) {

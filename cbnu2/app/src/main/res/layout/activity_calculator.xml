@@ -74,15 +74,15 @@
                 android:textColor="@color/red" />
 
             <android.widget.Button
-                android:id="@+id/btn_bracket"
+                android:id="@+id/btn_backspace"
                 style="@style/CalculatorButton"
                 android:layout_toEndOf="@+id/btn_cancle"
-                android:text="( )" />
+                android:text="⌫" />
 
             <android.widget.Button
                 android:id="@+id/btn_mod"
                 style="@style/CalculatorButton"
-                android:layout_toRightOf="@+id/btn_bracket"
+                android:layout_toRightOf="@+id/btn_backspace"
                 android:text="%" />
 
             <android.widget.Button
