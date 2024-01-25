@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.cbnu2.R;
 import com.example.cbnu2.databinding.ActivityCalculatorBinding;
 
 public class CalculatorActivity extends AppCompatActivity {
@@ -47,6 +46,7 @@ public class CalculatorActivity extends AppCompatActivity {
         setEqualsClickListener(binding.btnEqual);
         setBackspaceClickListener(binding.btnBackspace);
         setClearClickListener(binding.btnCancle);
+        setChangeClickListener(binding.btnChangePosNeg);
 
 
     }
@@ -101,6 +101,29 @@ public class CalculatorActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void setChangeClickListener(Button button){
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currentInput.length() > 0) {
+                    double currentValue = Double.parseDouble(currentInput.toString());
+                    double newValue = -currentValue;
+
+                    if(newValue % 1 == 0) {
+                        int newIntValue = (int)newValue;
+                        currentInput.setLength(0);
+                        appendToCurrentInput(String.valueOf(newIntValue));
+                    } else {
+                        currentInput.setLength(0);
+                        appendToCurrentInput(String.valueOf(newValue));
+                    }
+
+
+                }
+            }
+        });
+    }
     private void setClearClickListener(Button button){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,7 +138,9 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void handleNumericInput(String value) {
-        if (value.equals(".") && currentInput.toString().contains(".")) {
+        if (value.equals(".") && currentInput.length() == 0) {
+            makeToast("숫자를 먼저 입력하세요");
+        } else if (value.equals(".") && currentInput.toString().contains(".")) {
             makeToast("소수점은 한 번만 입력 가능합니다");
         } else {
             appendToCurrentInput(value);
@@ -128,7 +153,7 @@ public class CalculatorActivity extends AppCompatActivity {
             makeToast("숫자를 먼저 입력하세요");
             return;
         }
-        if(currentOperator == "") {
+        if(currentOperator.equals("")) {
             appendToCumulativeInput(currentInput.toString());
             clearCurrentInput();
             currentOperator = operator;
@@ -143,7 +168,7 @@ public class CalculatorActivity extends AppCompatActivity {
             makeToast("숫자를 먼저 입력하세요");
             return;
         }
-        if(currentOperator == "") {
+        if(currentOperator.equals("")) {
             return ;
         }
         double result = performCalculation(
@@ -151,7 +176,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 Double.parseDouble(currentInput.toString()),
                 currentOperator
         );
-        if(result % 1.0 == 0) {
+        if (result % 1.0 == 0) {
             int intResult = (int)result;
             binding.numResult.setText(String.valueOf(intResult));
             binding.numInput.setText(String.valueOf(intResult));
