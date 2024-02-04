@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 
+import com.example.cbnu2.agecalculator.AgeCalculatorActivity;
 import com.example.cbnu2.calculator.CalculatorActivity;
 import com.example.cbnu2.countperson.CountPerson;
 import com.example.cbnu2.databinding.ActivityMainBinding;
@@ -41,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.btnAgeCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(MainActivity.this, AgeCalculatorActivity.class);
                 startActivity(intent);
             }
         });
