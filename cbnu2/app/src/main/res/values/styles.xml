@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="CalculatorButton">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">70dp</item>
         <item name="android:background">@drawable/solid_button</item>
-        <item name="android:gravity">center</item>
         <item name="android:textColor">@color/green</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textSize">36sp</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
         <item name="android:layout_marginStart">10dp</item>
         <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_weight">1</item>
+
     </style>
 </resources>
