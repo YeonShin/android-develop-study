@@ -7,6 +7,7 @@
     android:background="@color/black"
     android:orientation="vertical"
     android:padding="15dp"
+
     tools:context=".calculator.CalculatorActivity">
 
     <RelativeLayout
@@ -15,13 +16,14 @@
         android:layout_height="200dp">
 
         <TextView
-            android:id="@+id/txt_expression"
+            android:id="@+id/num_input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:hint="Expression"
             android:text=""
+            android:textAlignment="textEnd"
             android:textColor="@color/white"
             android:textSize="32sp" />
     </RelativeLayout>
@@ -33,7 +35,7 @@
         android:layout_below="@+id/input_layout">
 
         <TextView
-            android:id="@+id/txt_result"
+            android:id="@+id/num_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -74,7 +76,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="clearClick"
+
                 android:text="C"
                 android:textColor="@color/red" />
 
@@ -83,7 +85,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="deleteClick"
+
                 android:text="⌫" />
 
             <android.widget.Button
@@ -91,7 +93,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="%" />
 
             <android.widget.Button
@@ -99,7 +101,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="÷" />
         </TableRow>
 
@@ -114,7 +116,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="7"
                 android:textColor="@color/white" />
 
@@ -123,7 +125,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="8"
                 android:textColor="@color/white" />
 
@@ -132,7 +134,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="9"
                 android:textColor="@color/white" />
 
@@ -141,7 +143,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="X" />
         </TableRow>
 
@@ -156,7 +158,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="4"
                 android:textColor="@color/white" />
 
@@ -165,7 +167,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="5"
                 android:textColor="@color/white" />
 
@@ -174,7 +176,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="6"
                 android:textColor="@color/white" />
 
@@ -183,7 +185,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="-" />
         </TableRow>
 
@@ -198,7 +200,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="1"
                 android:textColor="@color/white" />
 
@@ -207,7 +209,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="2"
                 android:textColor="@color/white" />
 
@@ -216,7 +218,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="3"
                 android:textColor="@color/white" />
 
@@ -225,7 +227,7 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
+
                 android:text="+" />
         </TableRow>
 
@@ -240,7 +242,6 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
                 android:text="+/-"
                 android:textColor="@color/white" />
 
@@ -249,7 +250,6 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
                 android:text="0"
                 android:textColor="@color/white" />
 
@@ -258,7 +258,6 @@
                 style="@style/CalculatorButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:onClick="buttonClick"
                 android:text="."
                 android:textColor="@color/white" />
 
@@ -268,7 +267,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/green"
-                android:onClick="equalClick"
                 android:text="="
                 android:textColor="@color/white" />
         </TableRow>
