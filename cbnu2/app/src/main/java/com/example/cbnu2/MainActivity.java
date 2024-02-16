@@ -12,6 +12,7 @@ import com.example.cbnu2.calculator.CalculatorActivity;
 import com.example.cbnu2.countperson.CountPerson;
 import com.example.cbnu2.databinding.ActivityMainBinding;
 import com.example.cbnu2.login.LogInActivity;
+import com.example.cbnu2.quizapp.QuizAppActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(MainActivity.this, AgeCalculatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        binding.btnQuizApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(MainActivity.this, QuizAppActivity.class);
                 startActivity(intent);
             }
         });
